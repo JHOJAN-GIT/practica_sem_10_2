@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Panel de Control</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>📦 TechStore</h1>
+            <p>Panel de Administración de Productos</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="cambiarPestana('ver-productos')">Ver Inventario</button>
+            <button class="tab-btn" onclick="cambiarPestana('agregar-producto')">Agregar Producto</button>
+        </div>
+
+        <!-- Pestaña 1: Ver Productos -->
+        <section id="ver-productos" class="tab-content active">
+            <h2>Lista de Productos</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-productos">
+                        <!-- Aquí JavaScript inyectará los productos -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pestaña 2: Agregar Producto -->
+        <section id="agregar-producto" class="tab-content">
+            <h2>Añadir Nuevo Producto</h2>
+            <form id="form-producto">
+                <div class="input-group">
+                    <label for="nombre">Nombre del Producto:</label>
+                    <input type="text" id="nombre" required placeholder="Ej. Teclado Mecánico">
+                </div>
+                <div class="input-group">
+                    <label for="precio">Precio (S/):</label>
+                    <input type="number" id="precio" step="0.01" required placeholder="Ej. 150.50">
+                </div>
+                <div class="input-group">
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" required placeholder="Ej. 10">
+                </div>
+                <button type="submit" class="btn-guardar">Guardar Producto</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Práctica Semana 10 - Desarrollo de Aplicaciones Web &copy; 2026</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
